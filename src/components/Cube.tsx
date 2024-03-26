@@ -17,15 +17,29 @@ const Cube: Component = () => {
     const renderer = new THREE.WebGLRenderer({
       powerPreference: 'high-performance',
       antialias: true,
+      alpha: true,
     })
     renderer.setSize(canvas.clientWidth, canvas.clientHeight)
 
     canvas.appendChild(renderer.domElement)
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+    const geometry = new THREE.BoxGeometry(2, 2, 2)
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x5cbdb4,
+      // wireframe: true,
+    })
     const cube = new THREE.Mesh(geometry, material)
     scene.add(cube)
+
+    // 使用EdgesGeometry从BoxGeometry提取线框
+    const edgesGeometry = new THREE.EdgesGeometry(geometry)
+
+    // 创建线条材质
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 })
+
+    // 使用LineSegments创建线框
+    const wireframe = new THREE.LineSegments(edgesGeometry, lineMaterial)
+    cube.add(wireframe)
 
     camera.position.z = 5
 

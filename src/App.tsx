@@ -16,7 +16,7 @@ const App: Component = () => {
       <div class='text-5xl font-semibold text-sky-800 underline underline-offset-2 text-center my-8'>
         Hello for ThreeJS with SolidJS
       </div>
-      <div class='w-4/5 h-96 mx-auto my-8 rounded-xl overflow-hidden'>
+      <div class='w-2/5 h-96 mx-auto my-8 rounded-xl overflow-hidden border border-gray-300 drop-shadow-lg'>
         <Cube />
       </div>
     </>
