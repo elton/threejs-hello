@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client"],
+    "noEmit": true,
+    "isolatedModules": true,
+    "baseUrl": ".", // 设置项目的基本路径，用于解析模块的相对路径。
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.jsx",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+
+    "tests/**/*.js",
+    "tests/**/*.ts",
+    "tests/**/*.jsx",
+    "tests/**/*.tsx",
+    "tests/**/*.d.ts"
+  ],
+
+  "exclude": ["node_modules", "typings", "public", "build", "dist", "app"]
+}
